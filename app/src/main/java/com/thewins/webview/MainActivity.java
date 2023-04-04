@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        _tampilkanButton = (Button)findViewById(R.id.tampilkanButton);
-        _urlEditText = (EditText)findViewById(R.id.urlEditText);
-        _webView1 = (WebView)findViewById(R.id.webView1);
+        _tampilkanButton = findViewById(R.id.tampilkanButton);
+        _urlEditText = findViewById(R.id.urlEditText);
+        _webView1 = findViewById(R.id.webView1);
     }
 
     public void tampilkanButton_onClick(View view) {
