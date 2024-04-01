@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         _tampilkanButton = findViewById(R.id.tampilkanButton);
         _urlEditText = findViewById(R.id.urlEditText);
         _webView1 = findViewById(R.id.webView1);
+
     }
 
     public void tampilkanButton_onClick(View view) {
