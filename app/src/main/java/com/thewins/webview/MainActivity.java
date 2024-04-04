@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    private Button _tampilkanButton;
     private EditText _urlEditText;
     private WebView _webView1;
 
@@ -18,10 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        _tampilkanButton = findViewById(R.id.tampilkanButton);
         _urlEditText = findViewById(R.id.urlEditText);
         _webView1 = findViewById(R.id.webView1);
-
     }
 
     public void tampilkanButton_onClick(View view) {
