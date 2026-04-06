@@ -1,5 +1,9 @@
 package com.thewins.webview;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +12,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText _urlEditText;
@@ -33,6 +38,28 @@ public class MainActivity extends AppCompatActivity {
         } else {
             _webView1.setWebViewClient(new WebViewClient());
             _webView1.loadUrl(url);
+        }
+    }
+    public void shareButton_onClick(View view){
+        // Wisly Susanto(232102547) Tanggal 06/04/2026
+        String currentUrl = _webView1.getUrl();
+
+        if (currentUrl != null && !currentUrl.isEmpty()) {
+
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("URL Berhasil Disalin", currentUrl);
+            clipboard.setPrimaryClip(clip);
+
+            Toast.makeText(this, "Link disalin ke clipboard", Toast.LENGTH_SHORT).show();
+
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, currentUrl);
+
+            startActivity(Intent.createChooser(shareIntent, "Bagikan Link Melalui:"));
+        }
+        else {
+            Toast.makeText(this, "Tidak ada link untuk dibagikan", Toast.LENGTH_SHORT).show();
         }
     }
 }

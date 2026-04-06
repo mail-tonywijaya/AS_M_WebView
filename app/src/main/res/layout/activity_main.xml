@@ -22,11 +22,17 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tampilkan"
             android:id="@+id/tampilkanButton"
             android:onClick="tampilkanButton_onClick"
             android:drawableStart="@android:drawable/ic_menu_search"
             />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shareButton"
+            android:onClick="shareButton_onClick"
+            android:drawableStart="@android:drawable/ic_menu_share" />
     </LinearLayout>
     <WebView
         android:layout_width="match_parent"
