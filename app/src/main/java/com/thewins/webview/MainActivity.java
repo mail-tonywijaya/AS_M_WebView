@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void tampilkanButton_onClick(View view) {
         String url = _urlEditText.getText().toString();
+
         if (!url.contains("https://")) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("URL INVALID")
