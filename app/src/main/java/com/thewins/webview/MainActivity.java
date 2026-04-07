@@ -28,19 +28,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tampilkanButton_onClick(View view) {
-        String url = _urlEditText.getText().toString();
+        String url = _urlEditText.getText().toString().trim();
 
-        if (!url.contains("https://")) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("URL INVALID")
-                    .setMessage("URL tidak dimulai dengan https://")
-                    .setPositiveButton("Oke", null)
-                    .show();
-        } else {
-            _webView1.setWebViewClient(new WebViewClient());
+        // Najwan Abdurrahman (232102621) tgl 07/04/2026
+        if (!url.startsWith("https://")){
+            url = "https://" + url;
+            _urlEditText.setText(url);
+            _urlEditText.setSelection(url.length());
+        }
+        _webView1.setWebViewClient(new WebViewClient());
             _webView1.loadUrl(url);
         }
-    }
+
     public void shareButton_onClick(View view){
         // Wisly Susanto(232102547) Tanggal 06/04/2026
         String currentUrl = _webView1.getUrl();
