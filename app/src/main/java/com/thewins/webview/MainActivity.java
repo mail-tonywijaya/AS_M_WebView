@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     public void shareButton_onClick(View view){
-        // Wisly Susanto(232102547) Tanggal 06/04/2026
+        // Wikisly Susanto(232102547) Tanggal 06/04/2026
         String currentUrl = _webView1.getUrl();
 
         if (currentUrl != null && !currentUrl.isEmpty()) {
